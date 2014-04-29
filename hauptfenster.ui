@@ -1,0 +1,990 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1020</width>
+    <height>620</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <property name="windowIcon">
+   <iconset resource="data/icons.qrc">
+    <normaloff>:/bilder/processor.png</normaloff>:/bilder/processor.png</iconset>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QLabel" name="label">
+    <property name="geometry">
+     <rect>
+      <x>30</x>
+      <y>20</y>
+      <width>81</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">color: rgb(85, 170, 0);
+font-size: 20px;
+font-weight: 800;</string>
+    </property>
+    <property name="text">
+     <string>Score:</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButtonProzess">
+    <property name="geometry">
+     <rect>
+      <x>60</x>
+      <y>140</y>
+      <width>111</width>
+      <height>101</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true"/>
+    </property>
+    <property name="text">
+     <string>Prozess starten</string>
+    </property>
+   </widget>
+   <widget class="QGroupBox" name="groupBox">
+    <property name="geometry">
+     <rect>
+      <x>310</x>
+      <y>80</y>
+      <width>321</width>
+      <height>431</height>
+     </rect>
+    </property>
+    <property name="title">
+     <string>Besitztümer</string>
+    </property>
+    <widget class="QGroupBox" name="groupBoxAssistenten">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>30</y>
+       <width>281</width>
+       <height>81</height>
+      </rect>
+     </property>
+     <property name="title">
+      <string>Assistenten:</string>
+     </property>
+     <widget class="QLabel" name="label_22">
+      <property name="geometry">
+       <rect>
+        <x>15</x>
+        <y>20</y>
+        <width>51</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Anzahl:</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="labelAnzahlAssitenten">
+      <property name="geometry">
+       <rect>
+        <x>15</x>
+        <y>50</y>
+        <width>41</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>0</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_24">
+      <property name="geometry">
+       <rect>
+        <x>75</x>
+        <y>20</y>
+        <width>101</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Prozesse / Sekunde:</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_25">
+      <property name="geometry">
+       <rect>
+        <x>195</x>
+        <y>20</y>
+        <width>81</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Prozesse ges.:</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="labelAssistentenProzesseProSekunde">
+      <property name="geometry">
+       <rect>
+        <x>95</x>
+        <y>50</y>
+        <width>71</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>0</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+      </property>
+     </widget>
+     <widget class="QLabel" name="labelAssistentenProzesseGesammt">
+      <property name="geometry">
+       <rect>
+        <x>195</x>
+        <y>50</y>
+        <width>71</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>0</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QGroupBox" name="groupBoxDOS">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>130</y>
+       <width>281</width>
+       <height>81</height>
+      </rect>
+     </property>
+     <property name="title">
+      <string>DOS:</string>
+     </property>
+     <widget class="QLabel" name="label_28">
+      <property name="geometry">
+       <rect>
+        <x>15</x>
+        <y>20</y>
+        <width>51</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Anzahl:</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="labelAnzahlDOS">
+      <property name="geometry">
+       <rect>
+        <x>15</x>
+        <y>50</y>
+        <width>41</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>0</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_30">
+      <property name="geometry">
+       <rect>
+        <x>75</x>
+        <y>20</y>
+        <width>101</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Prozesse / Sekunde:</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_31">
+      <property name="geometry">
+       <rect>
+        <x>195</x>
+        <y>20</y>
+        <width>81</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Prozesse ges.:</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="labelDOSProzesseProSekunde">
+      <property name="geometry">
+       <rect>
+        <x>95</x>
+        <y>50</y>
+        <width>71</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>0</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+      </property>
+     </widget>
+     <widget class="QLabel" name="labelDOSProzesseGesammt">
+      <property name="geometry">
+       <rect>
+        <x>195</x>
+        <y>50</y>
+        <width>71</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>0</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QGroupBox" name="groupBoxServer">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>230</y>
+       <width>281</width>
+       <height>81</height>
+      </rect>
+     </property>
+     <property name="title">
+      <string>Server:</string>
+     </property>
+     <widget class="QLabel" name="label_34">
+      <property name="geometry">
+       <rect>
+        <x>15</x>
+        <y>20</y>
+        <width>51</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Anzahl:</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="labelAnzahlServer">
+      <property name="geometry">
+       <rect>
+        <x>15</x>
+        <y>50</y>
+        <width>41</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>0</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_36">
+      <property name="geometry">
+       <rect>
+        <x>75</x>
+        <y>20</y>
+        <width>101</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Prozesse / Sekunde:</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_37">
+      <property name="geometry">
+       <rect>
+        <x>195</x>
+        <y>20</y>
+        <width>81</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Prozesse ges.:</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="labelServerProzesseProSekunde">
+      <property name="geometry">
+       <rect>
+        <x>95</x>
+        <y>50</y>
+        <width>71</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>0</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+      </property>
+     </widget>
+     <widget class="QLabel" name="labelServerProzesseGesammt">
+      <property name="geometry">
+       <rect>
+        <x>195</x>
+        <y>50</y>
+        <width>71</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>0</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QGroupBox" name="groupBoxMatrix">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>330</y>
+       <width>281</width>
+       <height>81</height>
+      </rect>
+     </property>
+     <property name="title">
+      <string>Matrix:</string>
+     </property>
+     <widget class="QLabel" name="label_40">
+      <property name="geometry">
+       <rect>
+        <x>15</x>
+        <y>20</y>
+        <width>51</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Anzahl:</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="labelAnzahlMatrix">
+      <property name="geometry">
+       <rect>
+        <x>15</x>
+        <y>50</y>
+        <width>41</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>0</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_42">
+      <property name="geometry">
+       <rect>
+        <x>75</x>
+        <y>20</y>
+        <width>101</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Prozesse / Sekunde:</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_43">
+      <property name="geometry">
+       <rect>
+        <x>195</x>
+        <y>20</y>
+        <width>81</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Prozesse ges.:</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="labelMatrixProzesseProSekunde">
+      <property name="geometry">
+       <rect>
+        <x>95</x>
+        <y>50</y>
+        <width>71</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>0</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+      </property>
+     </widget>
+     <widget class="QLabel" name="labelMatrixProzesseGesammt">
+      <property name="geometry">
+       <rect>
+        <x>195</x>
+        <y>50</y>
+        <width>71</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>0</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+      </property>
+     </widget>
+    </widget>
+   </widget>
+   <widget class="QGroupBox" name="groupBox_2">
+    <property name="geometry">
+     <rect>
+      <x>660</x>
+      <y>80</y>
+      <width>321</width>
+      <height>431</height>
+     </rect>
+    </property>
+    <property name="title">
+     <string>Baumenü</string>
+    </property>
+    <widget class="QFrame" name="frameAssistent">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>30</y>
+       <width>291</width>
+       <height>81</height>
+      </rect>
+     </property>
+     <property name="frameShape">
+      <enum>QFrame::StyledPanel</enum>
+     </property>
+     <property name="frameShadow">
+      <enum>QFrame::Raised</enum>
+     </property>
+     <widget class="QPushButton" name="pushButtonAssistentHinzufuegen">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>30</y>
+        <width>131</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>hinzufügen</string>
+      </property>
+      <property name="icon">
+       <iconset resource="data/icons.qrc">
+        <normaloff>:/bilder/assistent.png</normaloff>:/bilder/assistent.png</iconset>
+      </property>
+      <property name="iconSize">
+       <size>
+        <width>32</width>
+        <height>32</height>
+       </size>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_4">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>10</y>
+        <width>71</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Assistent</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="labelPreisAssistent">
+      <property name="geometry">
+       <rect>
+        <x>200</x>
+        <y>10</y>
+        <width>81</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Preis:  $ 100</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="labelProduktionAssistent">
+      <property name="geometry">
+       <rect>
+        <x>200</x>
+        <y>50</y>
+        <width>71</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>+1 / Sekunde</string>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QFrame" name="frameDOS">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>120</y>
+       <width>291</width>
+       <height>81</height>
+      </rect>
+     </property>
+     <property name="frameShape">
+      <enum>QFrame::StyledPanel</enum>
+     </property>
+     <property name="frameShadow">
+      <enum>QFrame::Raised</enum>
+     </property>
+     <widget class="QPushButton" name="pushButtonDOSHinzufuegen">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>30</y>
+        <width>131</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>hinzufügen</string>
+      </property>
+      <property name="icon">
+       <iconset resource="data/icons.qrc">
+        <normaloff>:/bilder/dos.png</normaloff>:/bilder/dos.png</iconset>
+      </property>
+      <property name="iconSize">
+       <size>
+        <width>32</width>
+        <height>32</height>
+       </size>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_7">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>10</y>
+        <width>71</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>DOS</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="labelPreisDOS">
+      <property name="geometry">
+       <rect>
+        <x>200</x>
+        <y>10</y>
+        <width>81</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Preis:  $ 500</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="labelProduktionDOS">
+      <property name="geometry">
+       <rect>
+        <x>200</x>
+        <y>50</y>
+        <width>71</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>+30 / Sekunde</string>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QFrame" name="frameServer">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>220</y>
+       <width>291</width>
+       <height>81</height>
+      </rect>
+     </property>
+     <property name="frameShape">
+      <enum>QFrame::StyledPanel</enum>
+     </property>
+     <property name="frameShadow">
+      <enum>QFrame::Raised</enum>
+     </property>
+     <widget class="QPushButton" name="pushButtonServerHinzufuegen">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>30</y>
+        <width>131</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>hinzufügen</string>
+      </property>
+      <property name="icon">
+       <iconset resource="data/icons.qrc">
+        <normaloff>:/bilder/server.png</normaloff>:/bilder/server.png</iconset>
+      </property>
+      <property name="iconSize">
+       <size>
+        <width>32</width>
+        <height>32</height>
+       </size>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_10">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>10</y>
+        <width>71</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Server</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="labelPreisServer">
+      <property name="geometry">
+       <rect>
+        <x>200</x>
+        <y>10</y>
+        <width>81</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Preis:  $ 5000</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="labelProduktionServer">
+      <property name="geometry">
+       <rect>
+        <x>200</x>
+        <y>50</y>
+        <width>81</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>+200 / Sekunde</string>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QFrame" name="frameMatrix">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>320</y>
+       <width>291</width>
+       <height>81</height>
+      </rect>
+     </property>
+     <property name="frameShape">
+      <enum>QFrame::StyledPanel</enum>
+     </property>
+     <property name="frameShadow">
+      <enum>QFrame::Raised</enum>
+     </property>
+     <widget class="QPushButton" name="pushButtonMatrixHinzufuegen">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>30</y>
+        <width>131</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>hinzufügen</string>
+      </property>
+      <property name="icon">
+       <iconset resource="data/icons.qrc">
+        <normaloff>:/bilder/matrix.png</normaloff>:/bilder/matrix.png</iconset>
+      </property>
+      <property name="iconSize">
+       <size>
+        <width>32</width>
+        <height>32</height>
+       </size>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_19">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>10</y>
+        <width>71</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Matrix</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="labelPreisMatrix">
+      <property name="geometry">
+       <rect>
+        <x>200</x>
+        <y>10</y>
+        <width>81</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Preis:  $ 25000</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="labelProduktionMatrix">
+      <property name="geometry">
+       <rect>
+        <x>190</x>
+        <y>50</y>
+        <width>91</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>+2500 / Sekunde</string>
+      </property>
+     </widget>
+    </widget>
+   </widget>
+   <widget class="QLabel" name="label_2">
+    <property name="geometry">
+     <rect>
+      <x>30</x>
+      <y>70</y>
+      <width>111</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Prozesse / Sekunde:</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="labelProzesseProSekunde">
+    <property name="geometry">
+     <rect>
+      <x>150</x>
+      <y>70</y>
+      <width>101</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>0</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+    </property>
+   </widget>
+   <widget class="QLabel" name="labelScore">
+    <property name="geometry">
+     <rect>
+      <x>130</x>
+      <y>30</y>
+      <width>121</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>14</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>0</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+    </property>
+   </widget>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>1020</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menuDatei">
+    <property name="title">
+     <string>Datei</string>
+    </property>
+    <addaction name="actionNeues_Spiel"/>
+    <addaction name="separator"/>
+    <addaction name="actionSpiel_speichern"/>
+    <addaction name="actionSpiel_laden"/>
+    <addaction name="separator"/>
+    <addaction name="actionBeenden"/>
+   </widget>
+   <widget class="QMenu" name="menuInfo">
+    <property name="title">
+     <string>Info</string>
+    </property>
+    <widget class="QMenu" name="menuHilfe">
+     <property name="title">
+      <string>Hilfe</string>
+     </property>
+     <addaction name="actionAnleitung"/>
+     <addaction name="actionOnline_Dokumentation"/>
+    </widget>
+    <addaction name="menuHilfe"/>
+    <addaction name="actionUeber"/>
+   </widget>
+   <addaction name="menuDatei"/>
+   <addaction name="menuInfo"/>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+  <widget class="QToolBar" name="toolBar">
+   <property name="windowTitle">
+    <string>toolBar</string>
+   </property>
+   <property name="toolButtonStyle">
+    <enum>Qt::ToolButtonIconOnly</enum>
+   </property>
+   <attribute name="toolBarArea">
+    <enum>TopToolBarArea</enum>
+   </attribute>
+   <attribute name="toolBarBreak">
+    <bool>false</bool>
+   </attribute>
+   <addaction name="actionNeues_Spiel"/>
+   <addaction name="separator"/>
+   <addaction name="actionSpiel_speichern"/>
+   <addaction name="actionSpiel_laden"/>
+  </widget>
+  <action name="actionNeues_Spiel">
+   <property name="icon">
+    <iconset resource="data/icons.qrc">
+     <normaloff>:/icons/start.png</normaloff>:/icons/start.png</iconset>
+   </property>
+   <property name="text">
+    <string>Neues Spiel</string>
+   </property>
+   <property name="toolTip">
+    <string>Neues Spiel</string>
+   </property>
+   <property name="statusTip">
+    <string>Neues Spiel starten.</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+N</string>
+   </property>
+  </action>
+  <action name="actionSpiel_speichern">
+   <property name="icon">
+    <iconset resource="data/icons.qrc">
+     <normaloff>:/icons/speichern.png</normaloff>:/icons/speichern.png</iconset>
+   </property>
+   <property name="text">
+    <string>Spiel speichern</string>
+   </property>
+   <property name="statusTip">
+    <string>Spiel speichern.</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+S</string>
+   </property>
+  </action>
+  <action name="actionSpiel_laden">
+   <property name="icon">
+    <iconset resource="data/icons.qrc">
+     <normaloff>:/icons/laden.png</normaloff>:/icons/laden.png</iconset>
+   </property>
+   <property name="text">
+    <string>Spiel laden</string>
+   </property>
+   <property name="statusTip">
+    <string>Spiel laden.</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+L</string>
+   </property>
+  </action>
+  <action name="actionBeenden">
+   <property name="icon">
+    <iconset resource="data/icons.qrc">
+     <normaloff>:/icons/beenden.png</normaloff>:/icons/beenden.png</iconset>
+   </property>
+   <property name="text">
+    <string>Beenden</string>
+   </property>
+   <property name="statusTip">
+    <string>Programm beenden.</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+Q</string>
+   </property>
+  </action>
+  <action name="actionAnleitung">
+   <property name="text">
+    <string>Anleitung</string>
+   </property>
+  </action>
+  <action name="actionOnline_Dokumentation">
+   <property name="text">
+    <string>Online-Dokumentation</string>
+   </property>
+  </action>
+  <action name="actionUeber">
+   <property name="icon">
+    <iconset resource="data/icons.qrc">
+     <normaloff>:/icons/ueber.png</normaloff>:/icons/ueber.png</iconset>
+   </property>
+   <property name="text">
+    <string>Über</string>
+   </property>
+   <property name="statusTip">
+    <string>Informationen über das Programm.</string>
+   </property>
+  </action>
+ </widget>
+ <resources>
+  <include location="data/icons.qrc"/>
+ </resources>
+ <connections/>
+</ui>

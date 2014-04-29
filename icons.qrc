@@ -1,0 +1,14 @@
+<!DOCTYPE RCC><RCC version="1.0">
+ <qresource>
+     <file>icons/beenden.png</file>
+     <file>icons/laden.png</file>
+     <file>icons/speichern.png</file>
+     <file>icons/start.png</file>
+     <file>icons/ueber.png</file>
+     <file>bilder/assistent.png</file>
+     <file>bilder/dos.png</file>
+     <file>bilder/matrix.png</file>
+     <file>bilder/processor.png</file>
+     <file>bilder/server.png</file>
+ </qresource>
+ </RCC>
